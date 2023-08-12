@@ -1,0 +1,10 @@
+{
+        "name": "@kompanie/random-string",
+        "version": "1.0.0",
+        "license": "MIT",
+        "main": "index.js",
+        "repository": "github:kompanie-dev/random-string",
+        "files": [
+                "/source"
+        ]
+}
