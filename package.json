@@ -4,13 +4,16 @@
         "license": "MIT",
         "main": "index.js",
         "repository": "github:kompanie-dev/random-string",
+        "type": "module",
         "files": [
                 "/source"
         ],
         "scripts": {
+                "lint": "eslint",
                 "start": "npx diener --port=8000 --ignore-git --livereload"
         },
         "dependencies": {
-                "@kompanie/diener": "^3.0.0"
+                "@kompanie/diener": "^3.0.0",
+                "eslint": "^9.35.0"
         }
 }
