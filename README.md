@@ -1,4 +1,4 @@
-# random-string
+# random-string 🪢
 
 Generates a random string in the desired length.
 It also supports seeds and specifiying which letters should be used.
@@ -7,7 +7,7 @@ This function is not cryptographically secure.
 ## Usage
 
 At first you need to install the package using the following command:
-```
+```console
 npm i @kompanie/random-string
 ```
 
@@ -29,3 +29,19 @@ const result = RandomString.generate(7, 4, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 // Generate a string containing 7 characters, using no seed, using only these characters
 const result = RandomString.generate(7, null, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 ```
+
+## Demo
+
+To run the built in demo app first install the `devDependencies` after check out:
+
+```console
+npm i
+```
+
+And then launch the development web server:
+
+```console
+npm start
+```
+
+The demo app is then available under [localhost:8000/demo](http://localhost:8000/demo).

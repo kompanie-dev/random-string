@@ -6,5 +6,11 @@
         "repository": "github:kompanie-dev/random-string",
         "files": [
                 "/source"
-        ]
+        ],
+        "scripts": {
+                "start": "npx diener --port=8000 --ignore-git --livereload"
+        },
+        "dependencies": {
+                "@kompanie/diener": "^3.0.0"
+        }
 }

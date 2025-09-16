@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RandomString Demo</title>
+<style>
+    body, button, input {
+        background: #333;
+        color: #ccc;
+        font-family: "-apple-system", "Segoe UI", Verdana, sans-serif;
+    }
+    button, input {
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+    label {
+        display: inline-block;
+        width: 160px;
+    }
+
+    .margin-top {
+        margin-top: 25px;
+    }
+    .randomString {
+        font-size: 32px;
+        font-weight: 700;
+    }
+</style>
+
+<span id="randomString" class="randomString"></span>
+<br>
+
+<label>Length</label>
+<input type="number" id="length" value="8">
+<br>
+
+<label>Allowed Characters</label>
+<input type="text" id="allowedCharacters" value="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789">
+<br>
+
+<label>Seed</label>
+<input type="number" id="seed" value="17">
+<br>
+
+<label>Enable Seed</label>
+<input type="checkbox" id="useSeed">
+<br>
+
+<button id="generateString" class="margin-top">Generate String</button>
+
+<script type="module">
+    import { RandomString } from "../index.js";
+
+    function generateRandomString() {
+        const useSeed = document.getElementById("useSeed").checked;
+
+        const length = Number.parseInt(document.getElementById("length").value);
+        const seed = Number.parseInt(document.getElementById("seed").value);
+        const allowedCharacters = document.getElementById("allowedCharacters").value;
+
+        const seedIfEnabled = useSeed ? seed : null;
+
+        const randomString = RandomString.generate(length, seedIfEnabled, allowedCharacters);
+
+        document.getElementById("randomString").innerHTML = randomString;
+    }
+
+    document.getElementById("generateString").onclick = () => generateRandomString();
+    generateRandomString();
+</script>
